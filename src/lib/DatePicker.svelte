@@ -7,13 +7,16 @@
 
 	export let theDate = new Date();
 
-	let instance;
+	let container;
+	let target;
+
+	let datePicker;
 
 	onMount(() => {
-		const container = document.getElementById('tui-date-picker-container');
-		const target = document.getElementById('tui-date-picker-target');
+		// const container = document.getElementById('tui-date-picker-container');
+		// const target = document.getElementById('tui-date-picker-target');
 
-		instance = new DatePicker(container, {
+		datePicker = new DatePicker(container, {
 			date: theDate,
 			input: {
 				element: target,
@@ -21,16 +24,16 @@
 			}
 		});
 
-		instance.on('change', () => (theDate = instance.getDate()));
+		datePicker.on('change', () => (theDate = datePicker.getDate()));
 	});
 </script>
 
 <div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-	<input type="text" id="tui-date-picker-target" aria-label="Date-Time" />
+	<input type="text" aria-label="Date-Time" bind:this={target} />
 	<span class="tui-ico-date" />
 </div>
 
-<div id="tui-date-picker-container" style="margin-top: -1px;" />
+<div style="margin-top: -1px;" bind:this={container} />
 
 <!-- this is the calendar container -->
 <style>
