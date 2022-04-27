@@ -13,9 +13,6 @@
 	let datePicker;
 
 	onMount(() => {
-		// const container = document.getElementById('tui-date-picker-container');
-		// const target = document.getElementById('tui-date-picker-target');
-
 		datePicker = new DatePicker(container, {
 			date: theDate,
 			input: {
