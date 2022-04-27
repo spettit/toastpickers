@@ -1,7 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import 'tui-date-picker/dist/tui-date-picker.min.css';
+	import 'tui-date-picker/dist/tui-date-picker.css';
+
+	// using the non-minified css because I edited the 'tui-datepicker' class to add a z-index of 1000
 
 	import 'tui-time-picker/dist/tui-time-picker.min.css';
 
@@ -34,7 +36,4 @@
 	<span class="tui-ico-date" />
 </div>
 
-<div style="margin-top: -1px;" bind:this={container} />
-
-<style>
-</style>
+<div id="container" bind:this={container} />
