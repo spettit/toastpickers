@@ -1,11 +1,11 @@
 {
-  "name": "toasteditor",
-  "version": "0.0.9",
+  "name": "toastcomponents",
+  "version": "0.0.1",
   "keywords": [
     "svelte",
     "sveltekit",
-    "wysiwyg html editor",
-    "toast ui editor"
+    "wysiwyg html components",
+    "toast ui components"
   ],
   "scripts": {
     "dev": "svelte-kit dev",
@@ -17,7 +17,7 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "exports": {
-    ".": "./ToastEditor.svelte"
+    ".": "./DatePicker.svelte"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
@@ -30,6 +30,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@toast-ui/editor": "^3.1.5"
+    "tui-date-picker": "^4.3.1"
   }
 }

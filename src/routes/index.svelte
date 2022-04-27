@@ -1,14 +1,14 @@
 <script>
-	import ToastEditor from '$lib/ToastEditor.svelte';
-	let content = '';
+	import ToastEditor from '$lib/DatePicker.svelte';
+	let theDate;
 </script>
 
 <h1>Heading</h1>
 <div>
-	<ToastEditor bind:htmlOutput={content} height="300px" />
+	<ToastEditor bind:theDate />
 </div>
+{theDate}
 
-{content}
-
+<!-- {content} -->
 <style>
 </style>
