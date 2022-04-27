@@ -3,11 +3,18 @@
 	let theDate;
 </script>
 
-<h1>Heading</h1>
+<h1>Date and Time Pickers</h1>
 <div>
-	<DatePicker bind:theDate />
+	<DatePicker bind:theDate withTime={false} />
 </div>
-{theDate}
+<span class="display">
+	{theDate}
+</span>
 
 <style>
+	.display {
+		margin-top: 30px;
+		background-color: lightslategrey;
+		color: white;
+	}
 </style>

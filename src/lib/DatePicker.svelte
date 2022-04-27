@@ -5,7 +5,10 @@
 
 	import 'tui-date-picker/dist/tui-date-picker.css';
 
+	import 'tui-time-picker/dist/tui-time-picker.css';
+
 	export let theDate = new Date();
+	export let withTime = false; //
 
 	let container;
 	let target;
@@ -15,6 +18,7 @@
 	onMount(() => {
 		datePicker = new DatePicker(container, {
 			date: theDate,
+			timePicker: withTime,
 			input: {
 				element: target,
 				format: 'dd-MM-yyyy'
