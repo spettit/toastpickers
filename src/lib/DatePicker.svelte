@@ -1,11 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import DatePicker from 'tui-date-picker';
+	import 'tui-date-picker/dist/tui-date-picker.min.css';
 
-	import 'tui-date-picker/dist/tui-date-picker.css';
-
-	import 'tui-time-picker/dist/tui-time-picker.css';
+	import 'tui-time-picker/dist/tui-time-picker.min.css';
 
 	export let theDate = new Date();
 	export let withTime = false; //
@@ -15,7 +13,9 @@
 
 	let datePicker;
 
-	onMount(() => {
+	onMount(async () => {
+		const DatePickerImport = await import('tui-date-picker');
+		const DatePicker = DatePickerImport.default;
 		datePicker = new DatePicker(container, {
 			date: theDate,
 			timePicker: withTime,
@@ -36,6 +36,5 @@
 
 <div style="margin-top: -1px;" bind:this={container} />
 
-<!-- this is the calendar container -->
 <style>
 </style>

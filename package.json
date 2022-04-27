@@ -1,10 +1,10 @@
 {
   "name": "toastcomponents",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "keywords": [
     "svelte",
     "sveltekit",
-    "wysiwyg html components",
+    "date and time picker components",
     "toast ui components"
   ],
   "scripts": {
