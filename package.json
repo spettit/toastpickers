@@ -1,6 +1,6 @@
 {
   "name": "toastcomponents",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "svelte",
     "sveltekit",
@@ -17,7 +17,8 @@
     "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "exports": {
-    ".": "./DatePicker.svelte"
+    "./DatePicker.svelte": "./DatePicker.svelte",
+    "./DateRangePicker.svelte": "./DateRangePicker.svelte"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",

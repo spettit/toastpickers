@@ -1,5 +1,6 @@
 <script>
 	import DatePicker from '$lib/DatePicker.svelte';
+	import DateRangePicker from '$lib/DateRangePicker.svelte';
 	let theDate;
 </script>
 
@@ -10,6 +11,10 @@
 <span class="display">
 	{theDate}
 </span>
+
+<div>
+	<DateRangePicker bind:theDate />
+</div>
 
 <style>
 	.display {
