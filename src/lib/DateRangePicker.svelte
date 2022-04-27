@@ -1,4 +1,5 @@
 <script>
+	import { add } from 'date-fns';
 	import { onMount } from 'svelte';
 
 	import DatePicker from 'tui-date-picker';
@@ -7,7 +8,10 @@
 
 	import 'tui-time-picker/dist/tui-time-picker.css';
 
-	export let theDate = new Date();
+	export let theStartDate = new Date();
+
+	let theEndDate = add(theStartDate, { days: 1 });
+
 	// export let withTime = false; //
 
 	let container;
@@ -18,20 +22,27 @@
 	onMount(() => {
 		let dateRangePicker = DatePicker.createRangePicker({
 			startpicker: {
-				date: theDate,
+				date: theStartDate,
 				input: '#startpicker-input',
 				container: '#startpicker-container'
 			},
 			endpicker: {
-				date: theDate,
+				date: theEndDate,
 				input: '#endpicker-input',
 				container: '#endpicker-container'
 			},
 			selectableRanges: [
-				[theDate, new Date(theDate.getFullYear() + 1, theDate.getMonth(), theDate.getDate())]
+				[
+					theStartDate,
+					new Date(theStartDate.getFullYear() + 1, theStartDate.getMonth(), theStartDate.getDate())
+				]
 			]
 		});
-		console.log(dateRangePicker);
+		// console.log(dateRangePicker);
+		dateRangePicker.on('change:start', () => {
+			dateRangePicker.setEndDate(add(dateRangePicker.getStartDate(), { days: 1 }));
+			console.log(dateRangePicker.getEndDate());
+		});
 	});
 </script>
 
