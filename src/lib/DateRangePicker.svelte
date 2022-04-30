@@ -38,6 +38,8 @@
 			dateRangePicker.setEndDate(add(dateRangePicker.getStartDate(), { days: 1 }));
 			console.log(dateRangePicker.getEndDate());
 		});
+		const containers = Array.from(document.getElementsByClassName('tui-datepicker'));
+		containers.forEach((c) => (c.style.zIndex = 100));
 	});
 </script>
 

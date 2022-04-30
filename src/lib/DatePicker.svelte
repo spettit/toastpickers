@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import 'tui-date-picker/dist/tui-date-picker.css';
+	import 'tui-date-picker/dist/tui-date-picker.min.css';
 
 	// using the non-minified css because I edited the 'tui-datepicker' class to add a z-index of 1000
 
@@ -28,6 +28,8 @@
 		});
 
 		datePicker.on('change', () => (theDate = datePicker.getDate()));
+		const containers = Array.from(document.getElementsByClassName('tui-datepicker'));
+		containers.forEach((c) => (c.style.zIndex = 100));
 	});
 </script>
 
