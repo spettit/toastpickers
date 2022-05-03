@@ -33,9 +33,11 @@
 	});
 </script>
 
-<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
-	<input type="text" aria-label="Date-Time" bind:this={target} />
-	<span class="tui-ico-date" />
-</div>
+<div style="display: inline-block;">
+	<div class="tui-datepicker-input tui-datetime-input tui-has-focus">
+		<input type="text" aria-label="Date-Time" bind:this={target} />
+		<span class="tui-ico-date" />
+	</div>
 
-<div id="container" bind:this={container} />
+	<div id="container" bind:this={container} />
+</div>
